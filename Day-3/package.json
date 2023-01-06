@@ -1,0 +1,29 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  
+  "dependencies": {
+    "process": "^0.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santoshit8800/ReactJsWithAkshay.git"
+  },
+  "author": "santosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santoshit8800/ReactJsWithAkshay/issues"
+  },
+  "homepage": "https://github.com/santoshit8800/ReactJsWithAkshay#readme"
+}
