@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/santoshit8800/ReactJsWithAkshay/issues"
   },
-  "homepage": "https://github.com/santoshit8800/ReactJsWithAkshay#readme"
+  "homepage": "https://github.com/santoshit8800/ReactJsWithAkshay#readme",
+  "browserslist": [
+    "last 2 chrome versions"
+  ]
 }
