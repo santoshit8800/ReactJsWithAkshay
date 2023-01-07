@@ -5,14 +5,16 @@ const heading = React.createElement(
   "h1",
   {
     id: "title",
+    key: 'h1',
   },
-  "Heading first"
+  "Heading first",  
 );
 
 const heading2 = React.createElement(
   "h2",
   {
     id: "title",
+    key: 'h2',
   },
   "Heading 2"
 );
