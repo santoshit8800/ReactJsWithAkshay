@@ -1,0 +1,145 @@
+Chapter 5 
+1. What is the difference between Named Export, Default export and * as export?
+
+In React, you can use the export keyword to make the components and functions you define in a file available for use in other files. There are three ways to use the export keyword: named exports, default exports, and wildcard (*) exports.
+
+Named exports
+With named exports, you can have multiple exports per module, and the consumer of the module can choose which ones to import. You can use the export keyword followed by a name to export a function or a component. For example:
+
+export function add(a, b) {
+  return a + b;
+}
+
+export const PI = 3.14;
+
+export class Circle {
+  // class definition
+}
+
+To import a named export, you can use the import keyword followed by the name of the export and a local alias to use it. For example:
+
+
+import { add, PI, Circle } from './math';
+
+console.log(add(1, 2)); // 3
+console.log(PI); // 3.14
+
+const c = new Circle();
+
+Default exports
+A default export is a way to specify a single value that is to be exported when the module is imported. You can have only one default export per module. You can use the export default keyword followed by a value to export a default value. For example:
+
+export default function add(a, b) {
+  return a + b;
+}
+
+export default const PI = 3.14;
+
+export default class Circle {
+  // class definition
+}
+
+To import a default export, you can use the import keyword followed by the name you want to give to the default export and the path to the module. For example:
+
+import add from './math';
+
+console.log(add(1, 2)); // 3
+
+Wildcard (*) exports
+With wildcard exports, you can export all the exports of a module in a single statement. You can use the export * from statement followed by the path to the module to export all its exports. For example:
+
+// math.js
+export function add(a, b) {
+  return a + b;
+}
+
+export const PI = 3.14;
+
+export class Circle {
+  // class definition
+}
+
+// main.js
+export * from './math';
+
+To import all the exports of a module, you can use the import keyword followed by the name you want to give to the wildcard export and the path to the module. For example:
+
+import * as math from './math';
+
+console.log(math.add(1, 2)); // 3
+console.log(math.PI); // 3.14
+
+const c = new math.Circle();
+
+2. What is the importance of config.js file
+
+Config files are helpful in placing all our constants and other configuration items in one place. So that it will be easy to use and make changes in one place.
+
+A config.js file is a configuration file that allows you to define certain settings or preferences for a project. It is common to use a config.js file in a React project to define project-level settings that are used throughout the project, such as the base URL for an API, the path to the project's assets, or the list of available languages.
+
+The config.js file is usually placed in the root of the project, and it can be imported and used in any file in the project. For example, you can define a BASE_URL constant in the config.js file and use it to make HTTP requests in your components:
+
+// config.js
+export const BASE_URL = 'https://api.example.com';
+
+// MyComponent.js
+import { BASE_URL } from './config';
+
+fetch(BASE_URL + '/users')
+  .then(response => response.json())
+  .then(data => {
+    // handle data
+  });
+Having a config.js file allows you to centralize the project's configuration in a single place and makes it easy to update the settings when needed. It also helps to separate the project's configuration from the implementation, which can make the code easier to understand and maintain.
+
+3. What are React Hooks?
+
+React Hooks are a new feature in React that allows you to use state and other React features without writing a class. Hooks are functions that let you "hook into" React state and lifecycle features from function components.
+
+Prior to the introduction of Hooks, the only way to use state and other React features was to define a class component. With Hooks, you can use state and other features without the need to define a class. This can make your code simpler and easier to understand, as you don't have to switch between function and class components.
+
+Here is an example of a function component that uses the useState Hook to add state to the component:
+
+import { useState } from 'react';
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+There are several other Hooks available in React, such as useEffect for performing side effects, useContext for accessing context, and useReducer for managing state changes with reducers.
+
+We can use Hooks in any function component, but you can't use them in class components. Instead, you can use the equivalent features in class components, such as this.state and this.setState.
+
+﻿﻿4. Why do we need a useState Hook?
+
+The useState Hook is a way to add state to function components in React. Prior to the introduction of Hooks, the only way to use state in a React component was to define a class component. With the useState Hook, you can add state to a function component by calling the useState function and passing in the initial state as an argument.
+
+Here is an example of a function component that uses the useState Hook to add state to the component:
+
+import { useState } from 'react';
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+The useState Hook returns an array with two elements: the current state value and a function to update the state. In the example above, the state value is count and the update function is setCount. You can use the update function to change the state value, and React will re-render the component with the new state value.
+
+The useState Hook is a useful way to add state to function components, and it can make your code simpler and easier to understand, as you don't have to switch between function and class components.

@@ -51,3 +51,9 @@ Difference	async	defer
 code	<script async src = '...'></script>	<script defer src = '...'></script>
 Loading sequence	Does not guarantee the execution sequense of the script	Guarantees the execution sequence of scripts in wich they are ordered.
 Execution sequence	Loads the scripts while HTML is being rendered. When scripts are loaded, then HTML rendering stops and execution of script starts. When execution is completed, HTML rendering resumes.	Loads the scripts while HTML is being rendered. Executes the scripts only after the HTML is completely rendered
+
+
+
+References:
+- https://beta.reactjs.org/apis/react/createElement
+- https://www.youtube.com/watch?v=IrHmpdORLu8

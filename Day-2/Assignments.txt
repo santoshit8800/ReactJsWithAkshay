@@ -45,3 +45,10 @@ https://www.knowledgehut.com/blog/web-development/package-json-vs-package-lock-j
 https://www.geeksforgeeks.org/what-is-the-role-of-src-and-dist-folders-in-javascript-jquery/
 https://stackoverflow.com/questions/55510405/what-is-the-significance-of-browserslist-in-package-json-created-by-create-react#:~:text=What is Browserslist%3F,it's not limited to them.
 
+References
+● Creating your own create-react-app: https://medium.com/@JedaiSaboteur/creating-a-react-app-from-scratch-f3c693b84658
+● Parcel Documentation: https://parceljs.org/getting-started/webapp/
+● Parcel on Production: https://parceljs.org/features/production/
+● BrowsersList: https://browserslist.dev/
+
+
