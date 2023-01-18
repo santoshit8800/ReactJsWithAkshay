@@ -13,27 +13,37 @@ Parcel, Webpack, and Vite, these all are javascript bundlers. A bundler is a too
 •	What is .parcel-cache?
 The .cache folder (or .parcel-cache in parcel v2) stores information about your project when parcel builds it so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason why parcel can be so fast in development mode.
 Make sure to add .cache and dist to your .gitignore file to prevent committing these folders to Git. The .cache folder is used by Parcel as a temporary cache directory when building your app for development and production.****
+
 •	What is NPX?
 NPX: The npx stands for Node Package Execute and it comes with the npm, when you installed npm above 5.2.0 version then automatically npx will installed. It is an npm package runner that can execute any package that you want from the npm registry without even installing that package.****
+
 •	What is the difference between dependencies and devDependencies?
 dependencies: In the package.json file, there is an object called dependencies and it consists of all the packages that are used in the project with their version number. So, whenever you install any library that is required in your project that library you can find it in the dependencies object.
 devDependencies: In the package.json file, there is an object called as dev Dependencies and it consists of all the packages that are used in the project in its development phase and not in the production or testing environment with its version number. So, whenever you want to install any library that is required only in your development phase then you can find it in the dev Dependencies object.****
+
 •	What is Tree shaking?
 Tree shaking is a method to remove the dead or unwanted code which is basically done by the bundlers. This is important for preparing code that is production ready, for example with clean structures and minimal file size.****
+
 •	What is Hot Module Replacement?
 Hot Module Replacement (HMR) improves the development experience by automatically updating modules in the browser at runtime without needing a whole page refresh. This means that application state can be retained as you change small things. Parcel's HMR implementation supports both JavaScript and CSS assets.****
+
 •	What is .gitignore? What should we add and not add to it?
 gitignore file is a text file that tells Git which files or folders to ignore in a project. We should add those files in gitignore which are auto-generated in our project.
+
 •	What is the difference between package.json and package-lock.json?
 An application's Node.js package.json file is its brain. A project's functional characteristics are defined here, which NPM utilizes to install dependencies, execute scripts, and identify the entry point to our package. It captures vital information about a project, which is necessary.
 The package-lock.json is a lockfile that holds information on the dependencies or packages installed for a node.js project, including their exact version numbers.
 And without package-lock.json, there could be discrepancies in installed versions in various settings. To address this difficulty, package.lock.json is generated to have the same results in any environment. It should be in source control with the package.json file so if any other user clones the project and install dependencies; then it will install the same dependencies as in package-lock.json to prevent discrepancies.
+
 •	Why should we not modify package-lock.json?
 As we discussed above, package-lock.json file keeps our dependencies version locked, in order to avoid discrepancies/conflict on the production environment. So we should not modify this file at any cost.
+
 •	What is node_modules and should we push it on git?
 node_modules contains all the package which are used or needed for our project. And we should not push this into the git, because it can be auto generated later based on package-lock.json file.
+
 •	What is ‘dist’ folder?
 dist stands for distributable. It contains the minimized version of the code. The code present in the dist folder is the actual code which is used on the production. Ideally, it is considered a good practice to clean the /dist folder before each build.
+
 •	What is ‘browserlists’?
 Browserslist is a tool that allows specifying which browsers should be supported in your frontend app by specifying "queries" in a config file. It's used by frameworks/libraries such as React, Angular and Vue.
 References:

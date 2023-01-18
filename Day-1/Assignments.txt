@@ -1,4 +1,4 @@
-Q 1. What is emmet?
+\Q 1. What is emmet?
 Emmet is a plugin for text editors like VS Code that allows users to code faster.
 
 For example in a HTML file:
@@ -48,9 +48,9 @@ async and defer are boolean attributes which are used along with the script tag 
 Differences between async and defer.
 
 Difference	async	defer
-code	<script async src = '...'></script>	<script defer src = '...'></script>
-Loading sequence	Does not guarantee the execution sequense of the script	Guarantees the execution sequence of scripts in wich they are ordered.
-Execution sequence	Loads the scripts while HTML is being rendered. When scripts are loaded, then HTML rendering stops and execution of script starts. When execution is completed, HTML rendering resumes.	Loads the scripts while HTML is being rendered. Executes the scripts only after the HTML is completely rendered
+code					<script async src = '...'></script>									<script defer src = '...'></script>
+Loading sequence			Does not guarantee the execution sequense of the script					Guarantees the execution sequence of scripts in wich they are ordered.
+Execution sequence		Loads the scripts while HTML is being rendered. When scripts are loaded, then HTML rendering stops and execution of script starts. When execution is completed, HTML rendering resumes.	Loads the scripts while HTML is being rendered. Executes the scripts only after the HTML is completely rendered
 
 
 
