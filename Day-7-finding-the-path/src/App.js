@@ -12,6 +12,7 @@ import Error from "./components/Error"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "./components/Contact";
 import RestrauntMenu from "./components/RestrauntMenu";
+import Profile from "./components/Profile";
 
 
 
@@ -62,6 +63,12 @@ const appRouter = createBrowserRouter([
       {
         path: '/about',
         element: <About />,
+        children: [
+          {
+            path: "Profile",
+            element: <Profile />,
+          }
+        ]
       },
       {
         path: '/contact',
