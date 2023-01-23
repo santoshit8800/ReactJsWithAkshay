@@ -136,3 +136,6 @@ useEffect(() => {
     // this now gets called when the component unmounts
   };
 }, []);
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+https://bitbucket.org/namastedev/namaste-react-live/src/master/
