@@ -5,6 +5,8 @@ import RestrauntCard from "../components/RestaurentCard";
 import Shimmer from "./Shimmer";
 import { Link } from 'react-router-dom';
 import { filterData } from '../utils/helper';
+import useOnline from "../utils/useOnline";
+
 //what is state?
 //what is hook? - functions
 //what is useState?
@@ -36,6 +38,13 @@ const Body = () => {
       setAllRestaurents(json?.data?.cards[2]?.data?.data?.cards);
       SetFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
       console.log(setRestaurents);
+    }
+
+
+    const isOnline = useOnline();
+
+    if(!isOnline){
+      return <h1>Offline! Please check your internet connection...</h1>
     }
 
     // Conditional rendering

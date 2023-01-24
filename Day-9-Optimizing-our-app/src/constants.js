@@ -1,5 +1,5 @@
 export const IMG_CDN_URL = "https://lh3.googleusercontent.com/p/AF1QipNZCXWLqGecr7aGdFq2gvZWHJ6MrH3KWBFTm15E=w1080-h608-p-no-v0";
-
+export const FETCH_MENU_URL = "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=";
 export const restaurentList = [
     {
     "type": "restaurant",

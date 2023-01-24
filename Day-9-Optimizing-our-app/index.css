@@ -33,6 +33,8 @@ body {
 }
 ol, ul {
 	list-style: none;
+  margin: 0;
+  padding: 0;
 }
 blockquote, q {
 	quotes: none;
@@ -68,6 +70,7 @@ body {
 .header {
   box-shadow: 0 2px 5px #7fc9e1;
   padding: 0;
+  padding-right: 15px;
 }
 .footer {
   margin: 20px 0 0 0;
@@ -120,4 +123,12 @@ body {
 }
 .menu {
   display: flex;
+}
+.offline,
+.online {
+  font-size: 15px;
+  color: blue;
+}
+.offline {
+  color: red;
 }

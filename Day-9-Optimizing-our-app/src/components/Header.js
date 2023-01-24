@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import Logo from "../assets/img/food-villa-old.jpg";
-import {Link} from "react-router-dom";
+import {generatePath, Link} from "react-router-dom";
+import useOnline from '../utils/useOnline';
 
 const loggedInUser = () => {
   return false;
@@ -22,6 +23,8 @@ const Header = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const isOnline = useOnline;
+
   return (
     <div className="header">
       <Title />
@@ -31,8 +34,10 @@ const Header = () => {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/">Cart</Link></li>
+          <li><Link to="/Instamart">Instamart</Link></li>
         </ul>
       </div>
+      <h1>{isOnline? <span className='online'><i class="fas fa-signal"></i></span> : <span className='offline'><i class="fas fa-signal"></i></span>}</h1>
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
