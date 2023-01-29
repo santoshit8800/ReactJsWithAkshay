@@ -23,7 +23,8 @@ const Header = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const isOnline = useOnline;
+  const isOnline = useOnline();
+  console.log(isOnline);
 
   return (
     <div className="header">
@@ -37,7 +38,7 @@ const Header = () => {
           <li><Link to="/Instamart">Instamart</Link></li>
         </ul>
       </div>
-      <h1>{isOnline? <span className='online'><i class="fas fa-signal"></i></span> : <span className='offline'><i class="fas fa-signal"></i></span>}</h1>
+      <h1>{isOnline ? <span className='online'><i className="fas fa-signal"></i></span> : <span className='offline'><i className="fas fa-signal"></i></span>}</h1>
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
