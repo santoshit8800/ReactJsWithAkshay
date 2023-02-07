@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 // import Header from "./components/Header";
 // import {Title, Header} from "./components/Header"
@@ -15,7 +15,7 @@ import RestrauntMenu from "./components/RestrauntMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
 // import Instamart from "./components/Instamart";
-
+import UserContext from "./utils/UserContext";
 
 // Composing Components
 // const burgerKing = {
@@ -51,12 +51,24 @@ const Instamart = lazy(()=> import("./components/Instamart"));
 const About = lazy(()=> import("./components/About"));
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "Namaste React",
+    email: "santosh.prajp@gmail.com",
+  });
   return(
     <div className="wrapper">
-      
+      <UserContext.Provider
+      value={
+        {
+          user: user,
+          setUser: setUser,
+        }
+      }
+      >
       <Header />
       <Outlet />
       <Footer />
+      </UserContext.Provider>
     </div>
   );
 };
@@ -71,7 +83,14 @@ const appRouter = createBrowserRouter([
         path: '/',
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
-            <Body />
+            <Body 
+            
+            user={{
+              name: "Namaste React",
+              email: "santosh.prajp@gmail.com",
+            }}
+
+            />
           </Suspense>
         ),
       },

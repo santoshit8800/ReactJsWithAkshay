@@ -1,8 +1,9 @@
 import React from 'react';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Logo from "../assets/img/food-villa-old.jpg";
 import {generatePath, Link} from "react-router-dom";
 import useOnline from '../utils/useOnline';
+import UserContext from '../utils/UserContext';
 
 const loggedInUser = () => {
   return false;
@@ -26,6 +27,8 @@ const Header = () => {
 
   const isOnline = useOnline();
   console.log(isOnline);
+
+  const {user} = useContext(UserContext)
 
   return (
     // <div className="header">
@@ -69,6 +72,7 @@ const Header = () => {
       </div>
       <h1>{isOnline ? "✅" : "🔴"}</h1>
       {/* <span className="p-10 font-bold text-red-900">{user.name}</span> */}
+      <span className='p-10 font-bold text-red-900'>{user.name}</span>
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
